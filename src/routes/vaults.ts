@@ -3,7 +3,7 @@ import { db } from "../db";
 import { vaults } from "../db/schema";
 import { authElysia } from "../setup";
 
-export const vaultsStore = new Elysia()
+export const vaultsRoutes = new Elysia()
 	.use(authElysia)
 	.get("/vaults", async () => {
 		const vaultsList = await db.select().from(vaults);
