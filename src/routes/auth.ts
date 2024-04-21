@@ -25,7 +25,7 @@ export const authRoutes = new Elysia()
 		},
 		{
 			body: t.Object({
-				email: t.String({ format: "email" }),
+				email: t.String(),
 				password: t.String(),
 			}),
 		},
@@ -60,8 +60,9 @@ export const authRoutes = new Elysia()
 		},
 		{
 			body: t.Object({
-				email: t.String({ format: "email" }),
+				email: t.String(),
 				password: t.String(),
 			}),
 		},
-	);
+	)
+	.onError(console.error);

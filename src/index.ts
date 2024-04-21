@@ -19,7 +19,8 @@ const app = new Elysia()
 		}),
 	)
 	.use(authRoutes)
-	.use(vaultsRoutes);
+	.use(vaultsRoutes)
+	.onError(console.error);
 
 app.listen(process.env.PORT as string, () =>
 	console.log(`🦊 Server started at ${app.server?.url.origin}`),
